@@ -343,31 +343,32 @@ body{
     max-width: 100%;
 }
 
+.rsvp_form #message{
+    height: 120px;
+}
+
 .rsvp_form button{
     width: 200px;
-    padding: 15px 0;
+    padding: 15px;
     text-align: center;
     margin: 20px 10px;
     border-radius: 25px;
+    font-size: 15px;
     font-weight: bold;
-    border: 2px solid rgb(54, 59, 61);
-    background: rgb(201, 200, 200);
-    color: black;
+    border: 0;
+    background: rgb(81, 54, 156);
+    color: white;
     cursor: pointer;
-    overflow: hidden;
     align-self: center;
-}
-
-.rsvp_form button:hover span{
-    width: 100%;
+    outline: none;
 }
 
 .rsvp_form button:hover{
-    border: none;
+    background: rgb(160, 155, 253);
 }
 
 #qr{
-    /* display: none; */
+    display: none;
     position: absolute;
     bottom: 50;
     right: 30;

@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+@keyframes fadeInTop {
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+    .timeline{
+        height: 530vh;
+    }
+
+    .timeline .timetitle h1{
+        padding: 0;
+    }
+    .timeline .tl-row{
+        margin: 5px;
+        padding: 0;
+        padding-bottom: 110px;
+        justify-content: center;
+    }
+
+    .timeline .cardcol{
+        height: 100%;
+        padding: 60 0;
+        flex-basis: 100%;
+    }
+    
+    .timeline .card{
+        width: 100%;
+        height: 300px;
+        padding: 5px;
+        margin: 0;
+    }
+    
+    .timeline .textcol{
+        height: 0;
+        padding: 0;
+        flex-basis: 100%;
+    }
+
+    .timeline .cardcol::before{
+        visibility: hidden;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+:before,:after{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+header,section,footer{
+    display: block;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* .logo{
+    position: fixed;
+    left: 10;
+    top: 10;
+    z-index: 2;
+    margin: auto;
+    padding: 0 15px;
+    border: inset;
+    border-radius: 2px;
+    visibility: hidden;
+}
+.logo a{
+    font-size: 20px;
+    color: rgb(150, 132, 242);
+    font-family: 'Yellowtail', cursive;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+} */
+
+
+
+
+
+/* Home Section Styling */
+.homesection{
+    min-height: 100vh;
+    background-color: gray;
+    align-items: center;
+    position: relative;
+}
+
+.homesection .slide{
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.7s ease-in-out;
+}
+
+.homesection .slide.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.homesection .slide:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 2, 74, 0.7);
+    z-index: -1;
+}
+
+.homesection .slide.active .content p{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.homesection .slide.active .content h1{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.homesection .slide.active .content span{
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.homesection .row{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.homesection .content {
+    flex: 0 0 100%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.homesection .content p{
+    font-size: 30px;
+    color: white;
+    margin: 0 0 15px;
+}
+
+.homesection .content h1{
+    font-size: 100px;
+    color: white;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 10px;
+    font-family: 'Yellowtail', cursive;
+}
+
+.homesection .content span{
+    font-size: 30px;
+    display: inline-block;
+    color: white;
+    padding: 7px 30px;
+    margin: 15px 0 0;
+}
+/* ----------------------------------- */
+
+
+
+
+
+/* ----------Timeline Section Styling --------------*/
+
+.timeline{
+    background-image: linear-gradient(rgba(86, 9, 145, 0.45), rgba(180, 104, 246, 0.45)), url('img/Timeline.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    min-height: 260vh;
+    opacity: 1;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.timeline .timetitle h1{
+    padding: 80 0;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-family: 'Yellowtail', cursive;
+    width: 100%;
+}
+
+.tl-container{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+}
+
+.tl-row{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    /* height: 100%; */
+    margin: 50 50;
+    padding: 20 50;
+    width: 100%;
+}
+
+.timeline .cardcol::before{
+    display: flex;
+    flex-wrap: wrap;
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    background-color: whitesmoke;
+}
+
+.cardcol{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: center;
+    padding: 50 50;
+}
+
+.textcol{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    height: 40vh;
+    flex-basis: 50%;
+    padding: 50 50;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 220px;
+    height: 350px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px 5px;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: .2rem solid black;
+}
+/* -----------------------------------------------------------*/
+
+/* -----------------RSVP Styling Section ---------------------*/
+
+.rsvp{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgb(65, 39, 107);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rsvp_form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    padding: 20;
+    border-radius: 10px;
+}
+
+.rsvp_form h3{
+    display: flex;
+    align-self: center;
+    color: gray;
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-family: 'Yellowtail', cursive;
+    font-weight: 550;
+    margin: 10;
+}
+
+.rsvp_form p{
+    color: gray;
+    font-size: 25px;
+    letter-spacing: 1;
+    font-family: 'Yellowtail', cursive;
+}
+
+.rsvp_form input, .rsvp_form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 10px;
+    outline: none;
+    background: rgb(239, 238, 238);
+    font-size: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.rsvp_form button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid rgb(54, 59, 61);
+    background: rgb(201, 200, 200);
+    color: black;
+    cursor: pointer;
+    overflow: hidden;
+    align-self: center;
+}
+
+.rsvp_form button:hover span{
+    width: 100%;
+}
+
+.rsvp_form button:hover{
+    border: none;
+}
+
+#qr{
+    /* display: none; */
+    position: absolute;
+    bottom: 50;
+    right: 30;
+}
+
+/*-----------------------------------------------------------*/

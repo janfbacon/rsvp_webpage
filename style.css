@@ -12,23 +12,19 @@
 
 @media only screen and (max-width: 768px)
 {
-    .timeline{
-        height: 530vh;
-    }
-
     .timeline .timetitle h1{
         padding: 0;
     }
     .timeline .tl-row{
-        margin: 5px;
+        margin: 0;
         padding: 0;
-        padding-bottom: 110px;
+        padding-bottom: 25;
         justify-content: center;
     }
 
     .timeline .cardcol{
         height: 100%;
-        padding: 60 0;
+        padding: 0;
         flex-basis: 100%;
     }
     
@@ -231,7 +227,6 @@ body{
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    /* height: 100%; */
     margin: 50 50;
     padding: 20 50;
     width: 100%;
@@ -290,6 +285,33 @@ body{
     object-fit: cover;
     border: .2rem solid black;
 }
+
+/* -------------------- Specific Changes for Levi&Steph RSVP 2/21/2023 --------------- */
+.timeline{
+    padding-top: 100;
+    min-height: 15%;
+}
+
+.textcol, .timetitle, .ccol2, .ccol3, .ccol4, .cardcol::before{
+    display: none;
+    visibility: hidden;
+    padding: 0;
+    margin: 0;
+} 
+.tl-row{
+    padding: 20;
+    margin: 0;
+}
+
+.card{
+    height: 400px;
+    width: 600px;
+}
+.cardcol{
+    flex-basis: 100%;
+    padding: 0;
+}
+/* ----------------------------------------------------------------------------------- */
 /* -----------------------------------------------------------*/
 
 /* -----------------RSVP Styling Section ---------------------*/

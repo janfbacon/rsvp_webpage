@@ -28,7 +28,7 @@ function sendEmail(){
         message : document.getElementById('message').value,
         attend : rd_result
     }
-    emailjs.send("service_kt5bqhp", "template_tp3kvcn", params).then(function(res){
+    emailjs.send("service_88w15ga", "template_tp3kvcn", params).then(function(res){
         alert("Message sent successfully! Code: " + res.status);
     })
 }

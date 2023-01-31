@@ -51,7 +51,8 @@
                 </div>
             </div>
 
-            <div class="slide" style="background-image: url('img/Slides/img4.jpg');">
+            <!-------------------- Specific Changes for Levi&Steph RSVP 2/21/2023 --------------------->
+            <!-- <div class="slide" style="background-image: url('img/Slides/img4.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="content">
@@ -73,7 +74,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <!-- ----------------------------------------------------------------------------------- -->
         </section>
 
         <section class="timeline">
@@ -160,32 +162,78 @@
         </section>
         
         <section class="rsvp">
-                <form class="rsvp_form">
-                    <h3>RSVP</h3>
-                    <p>Kindly Respond by February 1, 2023</p>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email">
-                    <textarea id="message" placeholder="Your Message"></textarea>
-                    <button type="submit">Send</button>
-                </form>
+            <form class="rsvp_form" onsubmit="sendEmail(); reset(); return false;">
+                <h3>RSVP</h3>
+                <p>Kindly Respond by February 12, 2023</p>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email">
+                <textarea id="message" placeholder="Your Message"></textarea>
 
-                <div id="qr"></div>
+                Will you and your aforementioned guests be attending? *Please refer to the invitation for more info
+                <div class="radio_container">
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="rd_attend" id="rd_yes" value="yes">
+                    <label for="no">No</label>
+                    <input type="radio" name="rd_attend" id="rd_no" value="no">
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+
+            <div id="qr"></div>
         </section>
 
-        <!-- <script src="jquery.min.js"></script> -->
+        <script src="jquery.min.js"></script>
+        <script src="main.js"></script>
 
-        <!-- <script src="main.js"></script> -->
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init("zQNuq2WWSmFWLb_GG");
+        })();
+        </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- ----------------------------------SMTPJS Email Sending-------------------------------- -->
+        <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            const radio1 = document.getElementById('rd_yes');
+            const radio2 = document.getElementById('rd_no');
+
+            function sendEmail(){
+                let rd_result = radio1.checked===true ? 'Yes' : 'No';
+
+                Email.send({
+                    SecureToken: "a4feb51b-2515-4a69-9772-6f39a22ebe76",
+                    To : 'chewyvex@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "RSVP",
+                    Body : "Name: " + document.getElementById("name").value 
+                    + "<br> Email: " + document.getElementById("email").value 
+                    + "<br> Message: " + document.getElementById("message").value 
+                    + "<br> Attending: " + rd_result
+                }).then(
+                    message => alert("Message sent! Thank you for your response!")
+                );
+            }
+        </script> -->
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <!-- --------------------------------------- QR Code --------------------------------------- -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <script type="text/javascript">
-            const QRElement = document.getElementById('qr');
             
-            new QRCode(QRElement, {
-                text: 'https://janfbacon.github.io/rsvp_webpage/',
-                width: 100,
-                height: 100,
-            })
-        </script>
+        const QRElement = document.getElementById('qr');
+            
+        new QRCode(QRElement, {
+            text: 'https://janfbacon.github.io/rsvp_webpage/',
+            width: 100,
+            height: 100,
+        })   
+        </script> -->
+        <!-- --------------------------------------------------------------------------------------- -->
     </body>
 </html>
